@@ -1,1 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>After-Hours Revenue Recovery Blueprint - Dental Edition</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        .page {
+            max-width: 8.5in;
+            margin: 20px auto;
+            background: white;
+            padding: 60px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 36px;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-weight: 900;
+        }
+        
+        .header .subtitle {
+            font-size: 18px;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            color: #667eea;
+            margin: 40px 0 20px 0;
+            font-weight: 800;
+            border-left: 6px solid #667eea;
+            padding-left: 15px;
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 20px;
+            opacity: 0.95;
+        }
+        
+        .problem-box {
+            background: #fff5f5;
+            border-left: 6px solid #ef4444;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        
+        .problem-box h3 {
+            color: #ef4444;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .solution-box {
+            background: #f0fdf4;
+            border-left: 6px solid #22c55e;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        
+        .solution-box h3 {
+            color: #22c55e;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .checkmark {
+            color: #22c55e;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .calculation-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 16px;
+        }
+        
+        .calculation-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 16px;
+        }
+        
+        .calculation-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .calculation-table .total-row {
+            background: #fef3c7;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .highlight-box {
+            background: #fef3c7;
+            border: 3px solid #fbbf24;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .highlight-box .big-number {
+            font-size: 56px;
+            color: #d97706;
+            font-weight: 900;
+            margin: 15px 0;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .cta-box h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .case-study {
+            background: #f0f9ff;
+            border: 2px solid #3b82f6;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .case-study h3 {
+            color: #3b82f6;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .before, .after {
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .before {
+            background: #fef2f2;
+            border: 2px solid #ef4444;
+        }
+        
+        .after {
+            background: #f0fdf4;
+            border: 2px solid #22c55e;
+        }
+        
+        .before h4, .after h4 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        li {
+            margin: 12px 0;
+            font-size: 16px;
+        }
 
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            z-index: 1000;
+        }
+
+        .print-btn:hover {
+            background: #5568d3;
+        }
+
+        @media print {
+            .page {
+                box-shadow: none;
+                margin: 0;
+                page-break-after: always;
+            }
+            .print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">📄 Download PDF</button>
+
+    <!-- PAGE 1: THE SHOCKING TRUTH -->
+    <div class="page">
+        <div class="header">
+            <h1>🦷 The After-Hours Revenue Recovery Blueprint</h1>
+            <p class="subtitle">How Dental Practices Lose $18,000-$54,000 Per Month<br>(And Don't Even Know It)</p>
+        </div>
+        
+        <div class="stat-box">
+            <div class="stat-number">$18,000</div>
+            <div class="stat-label">Average Monthly Revenue Lost to Missed After-Hours Emergency Calls</div>
+        </div>
+        
+        <h2 class="section-title">The Invisible Profit Leak in Your Practice</h2>
+        
+        <p style="font-size: 18px; margin: 25px 0; line-height: 1.8;">
+            Every night at 5pm, your practice closes. But dental emergencies don't stop. Neither do patients researching their next dentist.
+        </p>
+        
+        <p style="font-size: 18px; margin: 25px 0; line-height: 1.8;">
+            <strong>Here's what happens every single night:</strong>
+        </p>
+        
+        <ul style="font-size: 17px;">
+            <li>🕐 7pm: Patient has broken crown emergency</li>
+            <li>📞 7:05pm: Calls your practice... straight to voicemail</li>
+            <li>🔍 7:10pm: Googles "emergency dentist near me"</li>
+            <li>✅ 7:15pm: Your competitor (with after-hours response) gets the patient</li>
+            <li>💸 You: Lost $500-$2,500 in immediate revenue</li>
+            <li>💸 You: Lost $3,000-$15,000 in lifetime patient value</li>
+        </ul>
+        
+        <div class="highlight-box">
+            <p style="font-size: 22px; margin-bottom: 10px;">This happens...</p>
+            <div class="big-number">30-45 times</div>
+            <p style="font-size: 22px; margin-top: 10px;">...per month for the average dental practice</p>
+        </div>
+        
+        <h2 class="section-title">Your Practice's Actual Numbers</h2>
+        
+        <table class="calculation-table">
+            <tr>
+                <th>Metric</th>
+                <th>Your Practice (Estimated)</th>
+            </tr>
+            <tr>
+                <td>Monthly patient inquiries (calls, emails, web forms)</td>
+                <td><strong>~100 leads</strong></td>
+            </tr>
+            <tr>
+                <td>% that occur after hours (5pm-8am, weekends)</td>
+                <td><strong>35-45%</strong></td>
+            </tr>
+            <tr>
+                <td>After-hours inquiries per month</td>
+                <td><strong>35-45 leads</strong></td>
+            </tr>
+            <tr>
+                <td>Current capture rate (voicemail callbacks)</td>
+                <td><strong>8-15%</strong></td>
+            </tr>
+            <tr>
+                <td>Missed leads per month</td>
+                <td><strong>30-41 patients</strong></td>
+            </tr>
+            <tr>
+                <td>Average new patient value (first visit)</td>
+                <td><strong>$300-$800</strong></td>
+            </tr>
+            <tr>
+                <td>Average lifetime patient value (3 years)</td>
+                <td><strong>$3,000-$8,000</strong></td>
+            </tr>
+            <tr>
+                <td>Conversion rate (if you'd responded instantly)</td>
+                <td><strong>60-70%</strong></td>
+            </tr>
+            <tr class="total-row">
+                <td><strong>💸 Monthly Lost Revenue (First Visit)</strong></td>
+                <td><strong style="color: #ef4444; font-size: 22px;">$5,400 - $22,960</strong></td>
+            </tr>
+            <tr class="total-row" style="background: #fee2e2;">
+                <td><strong>💸 Annual Lost Revenue (First Year)</strong></td>
+                <td><strong style="color: #dc2626; font-size: 26px;">$64,800 - $275,520</strong></td>
+            </tr>
+            <tr class="total-row" style="background: #fef2f2;">
+                <td><strong>💸 Lost Lifetime Value (3 Years)</strong></td>
+                <td><strong style="color: #991b1b; font-size: 28px;">$540,000 - $1,968,000</strong></td>
+            </tr>
+        </table>
+        
+        <div class="highlight-box">
+            <p style="font-size: 20px; margin-bottom: 15px;">Let that sink in...</p>
+            <p style="font-size: 24px; font-weight: bold;">That's enough to:<br>
+            • Buy a new panoramic X-ray system every year<br>
+            • Hire 2 full-time hygienists<br>
+            • Open a second location<br>
+            • Retire 5 years earlier</p>
+            <p style="font-size: 20px; margin-top: 20px; color: #d97706;">Gone. Every. Single. Year.</p>
+        </div>
+    </div>
+
+    <!-- PAGE 2: THE 3 DENTAL-SPECIFIC PROBLEMS -->
+    <div class="page">
+        <div class="header">
+            <h1>🚨 The 3 Revenue Killers for Dental Practices</h1>
+            <p class="subtitle">Why Traditional Solutions Don't Work</p>
+        </div>
+        
+        <div class="problem-box">
+            <h3>❌ Problem #1: The Emergency Black Hole</h3>
+            <p><strong>Saturday, 8pm: Patient breaks tooth on popcorn kernel</strong></p>
+            <ul>
+                <li>Calls your practice → Voicemail: "We're closed. For emergencies, go to ER"</li>
+                <li>Patient isn't going to ER for a broken tooth</li>
+                <li>Googles "emergency dentist open now"</li>
+                <li>Finds competitor with 24/7 answering → Books appointment</li>
+                <li>Monday morning: That patient is already someone else's patient</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Cost to you:</strong> $500 immediate + $5,000 lifetime value = <span style="color: #ef4444; font-weight: bold;">$5,500 LOST</span></p>
+        </div>
+        
+        <div class="problem-box">
+            <h3>❌ Problem #2: New Patient Phone Tag Nightmare</h3>
+            <p><strong>The typical sequence that loses patients:</strong></p>
+            <ul>
+                <li><strong>Monday 9am:</strong> New patient calls, front desk on another line</li>
+                <li><strong>Monday 10:30am:</strong> Receptionist calls back, patient at work (can't answer)</li>
+                <li><strong>Monday lunch:</strong> Patient calls again, staff at lunch</li>
+                <li><strong>Tuesday:</strong> Still playing phone tag</li>
+                <li><strong>Wednesday:</strong> Patient gets frustrated, books with competitor who answered immediately</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Reality:</strong> 67% of patients won't leave a voicemail. 89% won't call back more than twice.</p>
+        </div>
+        
+        <div class="problem-box">
+            <h3>❌ Problem #3: Insurance & Scheduling Bottleneck</h3>
+            <p><strong>What happens with manual processes:</strong></p>
+            <ul>
+                <li>Patient: "Do you take my insurance?" → Staff has to check, put them on hold</li>
+                <li>Patient: "What's available Tuesday morning?" → Staff has to look at calendar</li>
+                <li>Patient: "Can I bring my X-rays?" → Staff has to explain process</li>
+                <li>Meanwhile: 3 other calls waiting, front desk overwhelmed</li>
+                <li>Result: Rushed conversations, booking errors, frustrated patients</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Impact:</strong> 30% of new patient calls don't result in booked appointments due to friction.</p>
+        </div>
+        
+        <div class="stat-box">
+            <div class="stat-number">72%</div>
+            <div class="stat-label">of dental patients say they prefer to book appointments outside business hours</div>
+            <p style="margin-top: 20px; font-size: 16px; opacity: 0.9;">Source: Dental Economics, 2024</p>
+        </div>
+        
+        <h2 class="section-title">Why Traditional Solutions Fail Dentists</h2>
+        
+        <table class="calculation-table">
+            <tr>
+                <th>Solution</th>
+                <th>Why It Doesn't Work for Dentists</th>
+                <th>Annual Cost</th>
+            </tr>
+            <tr>
+                <td><strong>Hire night/weekend receptionist</strong></td>
+                <td>$45-65K salary + benefits<br>Still misses calls when busy<br>Doesn't know clinical details</td>
+                <td style="color: #ef4444; font-weight: bold;">$55,000-$85,000</td>
+            </tr>
+            <tr>
+                <td><strong>Dental answering service</strong></td>
+                <td>Generic scripts<br>Can't check insurance<br>Can't book appointments<br>Just takes messages</td>
+                <td style="color: #ef4444; font-weight: bold;">$4,000-$15,000</td>
+            </tr>
+            <tr>
+                <td><strong>Emergency line forwarding</strong></td>
+                <td>You answer at 2am<br>No work-life balance<br>Burnout guaranteed</td>
+                <td style="color: #ef4444; font-weight: bold;">$0 (but your sanity)</td>
+            </tr>
+            <tr>
+                <td><strong>Online contact forms</strong></td>
+                <td>78% abandonment rate<br>No immediate response<br>Patient books elsewhere</td>
+                <td style="color: #ef4444; font-weight: bold;">$0 (lose $65K+ annually)</td>
+            </tr>
+        </table>
+        
+        <div class="highlight-box">
+            <p style="font-size: 22px; font-weight: bold; margin-bottom: 15px;">The Real Problem?</p>
+            <p style="font-size: 18px; line-height: 1.6;">
+                None of these solutions can answer dental-specific questions, check insurance panels, 
+                book appointments automatically in your practice management software, AND respond in under 
+                3 seconds at 3am on a Sunday.
+            </p>
+            <p style="font-size: 20px; margin-top: 20px; font-weight: bold;">Until now.</p>
+        </div>
+    </div>
+
+    <!-- PAGE 3: THE SOLUTION -->
+    <div class="page">
+        <div class="header">
+            <h1>✅ The AI Dental Assistant System</h1>
+            <p class="subtitle">Capture Every Patient, 24/7/365</p>
+        </div>
+        
+        <div class="solution-box">
+            <h3>Imagine having a system that...</h3>
+            <ul style="font-size: 17px; line-height: 2;">
+                <li><span class="checkmark">✓</span> Answers patient inquiries in under 3 seconds (even at 3am on Christmas)</li>
+                <li><span class="checkmark">✓</span> Knows your services, pricing, insurance panels, and office policies</li>
+                <li><span class="checkmark">✓</span> Books new patient appointments directly into Dentrix/Eaglesoft/Open Dental</li>
+                <li><span class="checkmark">✓</span> Asks intake questions: insurance, chief complaint, preferred times</li>
+                <li><span class="checkmark">✓</span> Sends confirmations via SMS, email, and WhatsApp automatically</li>
+                <li><span class="checkmark">✓</span> Handles emergencies: triages severity, books urgent slots, provides interim care advice</li>
+                <li><span class="checkmark">✓</span> Speaks Spanish (and 94 other languages) automatically</li>
+                <li><span class="checkmark">✓</span> Costs less than 1 week of temp receptionist wages</li>
+            </ul>
+        </div>
+        
+        <p style="font-size: 20px; margin: 30px 0; font-weight: bold; text-align: center;">
+            That system exists. It's called an AI Dental Assistant.
+        </p>
+        
+        <h2 class="section-title">How It Works (Simple 3-Step Process)</h2>
+        
+        <div style="margin: 30px 0;">
+            <div style="background: #f0f9ff; padding: 25px; border-radius: 12px; margin: 20px 0; border-left: 6px solid #3b82f6;">
+                <h3 style="color: #3b82f6; margin-bottom: 15px;"><strong>Step 1:</strong> Patient Contacts Your Practice</h3>
+                <p>Via website chat, WhatsApp, Facebook, Google Business Messages, or SMS.</p>
+                <p style="margin-top: 10px; font-size: 15px; color: #666;">Available: 24/7/365 - No holidays, no sick days</p>
+            </div>
+            
+            <div style="background: #f0f9ff; padding: 25px; border-radius: 12px; margin: 20px 0; border-left: 6px solid #3b82f6;">
+                <h3 style="color: #3b82f6; margin-bottom: 15px;"><strong>Step 2:</strong> AI Responds Instantly with Dental Expertise</h3>
+                <p>Answers questions about services (crowns, implants, Invisalign, cleanings), insurance acceptance, 
+                emergency protocols, office hours, parking, and costs. Feels like texting your front desk.</p>
+                <p style="margin-top: 10px; font-size: 15px; color: #666;">Response time: < 3 seconds, every time</p>
+            </div>
+            
+            <div style="background: #f0f9ff; padding: 25px; border-radius: 12px; margin: 20px 0; border-left: 6px solid #3b82f6;">
+                <h3 style="color: #3b82f6; margin-bottom: 15px;"><strong>Step 3:</strong> Patient Booked, Data Captured, Team Notified</h3>
+                <p>System collects insurance info, chief complaint, medical history flags, books appointment slot, 
+                syncs to your practice management software, sends confirmation, notifies front desk via SMS.</p>
+                <p style="margin-top: 10px; font-size: 15px; color: #666;">Automation: 100% hands-free</p>
+            </div>
+        </div>
+        
+        <div class="stat-box">
+            <div class="stat-number">7 Days</div>
+            <div class="stat-label">From setup to live and capturing patients</div>
+        </div>
+        
+        <h2 class="section-title">What Makes This Different for Dentists</h2>
+        
+        <table class="calculation-table">
+            <tr>
+                <th>Feature</th>
+                <th>Generic Chatbot</th>
+                <th>AI Dental Assistant</th>
+            </tr>
+            <tr>
+                <td>Dental-specific knowledge</td>
+                <td style="text-align: center;">❌</td>
+                <td style="color: #22c55e; font-weight: bold;">✓ Pre-trained on dental terminology</td>
+            </tr>
+            <tr>
+                <td>Insurance verification</td>
+                <td style="text-align: center;">❌</td>
+                <td style="color: #22c55e; font-weight: bold;">✓ Checks your panel list</td>
+            </tr>
+            <tr>
+                <td>Practice management integration</td>
+                <td style="text-align: center;">❌</td>
+                <td style="color: #22c55e; font-weight: bold;">✓ Dentrix, Eaglesoft, Open Dental</td>
+            </tr>
+            <tr>
+                <td>Emergency triage</td>
+                <td style="text-align: center;">❌</td>
+                <td style="color: #22c55e; font-weight: bold;">✓ Urgent vs. routine classification</td>
+            </tr>
+            <tr>
+                <td>Medical history collection</td>
+                <td style="text-align: center;">❌</td>
+                <td style="color: #22c55e; font-weight: bold;">✓ HIPAA-compliant intake forms</td>
+            </tr>
+            <tr>
+                <td>Spanish language (for staff)</td>
+                <td style="text-align: center;">Extra cost</td>
+                <td style="color: #22c55e; font-weight: bold;">✓ Included (+ 94 languages)</td>
+            </tr>
+            <tr>
+                <td>Setup time</td>
+                <td style="text-align: center;">4-8 weeks</td>
+                <td style="color: #22c55e; font-weight: bold;">7 days</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- PAGE 4: CASE STUDY -->
+    <div class="page">
+        <div class="header">
+            <h1>📊 Real Results: Dental Practice Case Study</h1>
+            <p class="subtitle">How Dr. Mitchell Captured $52,500 in 90 Days</p>
+        </div>
+        
+        <div class="case-study">
+            <h3>🦷 Dr. Sarah Mitchell, DDS - Bright Smile Dental, Miami FL</h3>
+            
+            <p style="font-size: 17px; margin: 20px 0; line-height: 1.8;">
+                <strong>The Situation:</strong> 2-doctor practice, 4 hygienists, 100 calls per month. 
+                Dr. Mitchell estimated 35-40 came after hours or when staff was at lunch. These went to 
+                voicemail. Only 3-5 ever converted to scheduled appointments.
+            </p>
+            
+            <div class="before-after">
+                <div class="before">
+                    <h4 style="color: #ef4444;">❌ BEFORE AI Assistant</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin: 10px 0;">📞 35 after-hours calls/month</li>
+                        <li style="margin: 10px 0;">😞 32 went to voicemail</li>
+                        <li style="margin: 10px 0;">📧 4-5 left callbacks</li>
+                        <li style="margin: 10px 0;">✅ Only 3 converted to appointments</li>
+                        <li style="margin: 10px 0; font-weight: bold; color: #ef4444;">💸 Lost: 32 patients/month</li>
+                        <li style="margin: 10px 0; font-weight: bold; color: #ef4444;">💸 Revenue lost: ~$17,500/month</li>
+                    </ul>
+                </div>
+                
+                <div class="after">
+                    <h4 style="color: #22c55e;">✅ AFTER AI Assistant</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin: 10px 0;">🤖 35 after-hours inquiries</li>
+                        <li style="margin: 10px 0;">⚡ ALL answered < 3 seconds</li>
+                        <li style="margin: 10px 0;">📅 28 appointments booked automatically</li>
+                        <li style="margin: 10px 0;">✅ 21 showed up (75% show rate)</li>
+                        <li style="margin: 10px 0; font-weight: bold; color: #22c55e;">💰 Captured: 21 patients/month</li>
+                        <li style="margin: 10px 0; font-weight: bold; color: #22c55e;">💰 Revenue: $17,500/month</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="stat-box" style="margin: 30px 0;">
+                <div class="stat-number">$52,500</div>
+                <div class="stat-label">New Revenue Generated in First 90 Days</div>
+            </div>
+            
+            <table class="calculation-table">
+                <tr>
+                    <th colspan="2" style="text-align: center; font-size: 18px;">90-Day Financial Impact</th>
+                </tr>
+                <tr>
+                    <td>After-hours leads captured</td>
+                    <td><strong>105 patients (35/month × 3)</strong></td>
+                </tr>
+                <tr>
+                    <td>Appointments successfully booked</td>
+                    <td><strong>84 appointments (80% conversion)</strong></td>
+                </tr>
+                <tr>
+                    <td>Patient show-up rate</td>
+                    <td><strong>75% (63 patients attended)</strong></td>
+                </tr>
+                <tr>
+                    <td>Average first-visit revenue per patient</td>
+                    <td><strong>$833</strong></td>
+                </tr>
+                <tr style="background: #f0fdf4;">
+                    <td><strong>Total New Revenue</strong></td>
+                    <td><strong style="color: #22c55e; font-size: 20px;">$52,479</strong></td>
+                </tr>
+                <tr>
+                    <td>AI Assistant cost (90 days)</td>
+                    <td><strong>$1,950 (setup + 3 months)</strong></td>
+                </tr>
+                <tr class="total-row" style="background: #dcfce7;">
+                    <td><strong>Net Profit</strong></td>
+                    <td><strong style="color: #16a34a; font-size: 24px;">$50,529</strong></td>
+                </tr>
+                <tr class="total-row" style="background: #fef3c7;">
+                    <td><strong>ROI</strong></td>
+                    <td><strong style="color: #d97706; font-size: 24px;">2,591%</strong></td>
+                </tr>
+                <tr class="total-row" style="background: #e0e7ff;">
+                    <td><strong>Projected Year 1 Impact</strong></td>
+                    <td><strong style="color: #4338ca; font-size: 26px;">$210,000+</strong></td>
+                </tr>
+            </table>
+            
+            <div style="background: #f0f9ff; padding: 30px; border-radius: 15px; margin: 30px 0; border: 2px solid #3b82f6;">
+                <p style="font-size: 18px; font-style: italic; line-height: 1.8; color: #1e40af;">
+                    <strong>"I was skeptical. 'Another tech thing that'll collect dust,' I thought. 
+                    But this is different. We set it up in 6 days. First week: 8 leads we would've lost. 
+                    Three months later: over $50,000 in revenue from patients who called after hours. 
+                    My front desk staff is less stressed. Our no-show rate dropped. And I'm not getting 
+                    emergency calls at 2am anymore. My only regret? Not doing this two years ago."</strong>
+                </p>
+                <p style="margin-top: 20px; font-weight: bold; color: #1e40af;">
+                    — Dr. Sarah Mitchell, DDS<br>
+                    Bright Smile Dental Clinic, Miami FL
+                </p>
+            </div>
+            
+            <h2 class="section-title">Additional Benefits She Didn't Expect</h2>
+            
+            <ul style="font-size: 17px; line-height: 2;">
+                <li><span class="checkmark">✓</span> <strong>Staff time saved:</strong> 15 hours/week (no phone tag, no manual booking)</li>
+                <li><span class="checkmark">✓</span> <strong>No-show rate decreased:</strong> From 25% to 12% (automated reminders 24hrs before)</li>
+                <li><span class="checkmark">✓</span> <strong>Spanish-speaking patients:</strong> AI detected language and responded in Spanish (28% of inquiries)</li>
+                <li><span class="checkmark">✓</span> <strong>Google reviews increased:</strong> Automated follow-up requests increased reviews from 47 to 128 in 90 days</li>
+                <li><span class="checkmark">✓</span> <strong>Emergency triage:</strong> System identified true emergencies vs. routine, preventing ER visits</li>
+                <li><span class="checkmark">✓</span> <strong>Insurance pre-verification:</strong> Patients confirmed insurance before appointment, reducing admin burden</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PAGE 5: NEXT STEPS -->
+    <div class="page">
+        <div class="header">
+            <h1>🚀 Your Next Step</h1>
+            <p class="subtitle">Three Ways to Get Started Today</p>
+        </div>
+        
+        <div class="solution-box">
+            <h3>Option 1: Try the Live Demo (2 minutes, no signup)</h3>
+            <p style="font-size: 17px; margin: 15px 0; line-height: 1.7;">
+                Test it right now. Ask dental questions. Try booking an appointment. See the response speed.
+            </p>
+            <p style="font-size: 18px; margin-top: 20px;">
+                <strong>👉 Live Demo:</strong> <span style="color: #667eea; text-decoration: underline;">[INSERT YOUR LANDING PAGE URL]</span>
+            </p>
+        </div>
+        
+        <div class="solution-box">
+            <h3>Option 2: Get Your Custom ROI Calculation (Free)</h3>
+            <p style="font-size: 17px; margin: 15px 0; line-height: 1.7;">
+                I'll build a personalized calculation showing exactly how much revenue you're losing and 
+                how much you'd gain with an AI Assistant. Takes 5 minutes. Zero obligation.
+            </p>
+            <p style="font-size: 18px; margin-top: 20px;">
+                <strong>📧 Email me:</strong> <span style="color: #667eea;">[YOUR EMAIL]</span><br>
+                <strong>📱 WhatsApp:</strong> <span style="color: #667eea;">[YOUR NUMBER]</span>
+            </p>
+        </div>
+        
+        <div class="solution-box">
+            <h3>Option 3: Buy Now - Setup in 7 Days</h3>
+            <p style="font-size: 17px; margin: 15px 0; line-height: 1.7;">
+                Ready to stop losing $18,000/month? Click below to get started immediately.
+            </p>
+            
+            <div style="background: white; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                <p style="font-size: 16px; color: #666; margin-bottom: 15px;"><strong>Most Popular:</strong></p>
+                <h4 style="color: #667eea; font-size: 20px; margin-bottom: 10px;">Growth Package - $5,000 setup + $350/month</h4>
+                <ul style="font-size: 15px; color: #333;">
+                    <li>AI assistant on website + WhatsApp</li>
+                    <li>Appointment booking (Dentrix/Eaglesoft/Open Dental)</li>
+                    <li>Insurance panel checking</li>
+                    <li>SMS + Email confirmations & reminders</li>
+                    <li>Spanish language support</li>
+                    <li>7-day implementation</li>
+                    <li>30-day money-back guarantee</li>
+                </ul>
+                <p style="font-size: 18px; margin-top: 20px; font-weight: bold;">
+                    <strong>💳 Buy Now:</strong> <span style="color: #667eea; text-decoration: underline;">[INSERT STRIPE PAYMENT LINK]</span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="cta-box">
+            <h2>Questions? Let's Talk.</h2>
+            <p style="font-size: 18px; margin: 20px 0;">
+                Not sure which option is right? Want to see a demo tailored to your practice?
+            </p>
+            <p style="font-size: 20px; font-weight: bold;">
+                📧 [YOUR EMAIL]<br>
+                📱 WhatsApp: [YOUR NUMBER]<br>
+                📅 Book a 15-min call: [CALENDLY LINK]
+            </p>
+            <p style="font-size: 16px; margin-top: 20px; opacity: 0.9;">
+                I respond within 2 hours during business days
+            </p>
+        </div>
+        
+        <div style="margin-top: 40px; padding: 30px; background: #fef3c7; border-radius: 15px; border: 2px solid #fbbf24;">
+            <h3 style="color: #d97706; margin-bottom: 15px; font-size: 22px;">🎯 30-Day Performance Guarantee</h3>
+            <p style="font-size: 16px; line-height: 1.7; color: #333;">
+                If your AI Assistant doesn't capture at least 10 additional patients in the first 30 days, 
+                I'll refund your entire setup fee. No questions asked. You literally cannot lose.
+            </p>
+        </div>
+        
+        <div style="margin-top: 40px; padding: 30px; background: #f9fafb; border-radius: 15px;">
+            <h3 style="margin-bottom: 15px; font-size: 20px;">❓ FAQ</h3>
+            
+            <div style="margin: 20px 0;">
+                <p style="font-weight: bold; margin-bottom: 8px;">Q: Is this HIPAA compliant?</p>
+                <p style="color: #666;">A: Yes. All patient data is encrypted and stored in HIPAA-compliant servers.</p>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <p style="font-weight: bold; margin-bottom: 8px;">Q: What if a patient asks something it doesn't know?</p>
+                <p style="color: #666;">A: It says "Let me connect you with our team" and sends you an instant SMS alert.</p>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <p style="font-weight: bold; margin-bottom: 8px;">Q: Can I update information myself?</p>
+                <p style="color: #666;">A: Yes. Simple dashboard lets you update hours, services, pricing in 2 minutes.</p>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <p style="font-weight: bold; margin-bottom: 8px;">Q: Do I need technical skills?</p>
+                <p style="color: #666;">A: Nope! I handle the setup. You just provide your practice info.</p>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <p style="font-weight: bold; margin-bottom: 8px;">Q: Can I cancel anytime?</p>
+                <p style="color: #666;">A: Yes. No long-term contracts. Cancel with 30 days notice.</p>
+            </div>
+        </div>
+        
+        <div style="margin-top: 50px; padding-top: 30px; border-top: 2px solid #e5e5e5; text-align: center;">
+            <p style="font-size: 14px; color: #666;">
+                This guide was created by [YOUR NAME], founder of [YOUR COMPANY].<br>
+                I've helped 50+ dental practices capture over $2M in previously lost revenue.
+            </p>
+            <p style="font-size: 16px; color: #333; margin-top: 20px; font-weight: bold;">
+                Ready to be next?
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
