@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DentalPearl AI™ - Never Miss Another After-Hours Patient</title>
-    <meta name="description" content="The only AI receptionist built exclusively for dental practices. Capture every emergency call, book appointments 24/7, integrate with Dentrix.">
+    <title>Stop Losing After-Hours Dental Emergencies | Clarity Pearl</title>
     
     <style>
         * {
@@ -16,10 +15,7 @@
         :root {
             --dental-blue: #0ea5e9;
             --dental-teal: #14b8a6;
-            --pearl-white: #f8fafc;
-            --tooth-white: #ffffff;
-            --emergency-red: #ef4444;
-            --success-green: #10b981;
+            --gold: #fbbf24;
         }
         
         body {
@@ -29,7 +25,6 @@
             overflow-x: hidden;
         }
         
-        /* Premium animated background */
         .hero-bg {
             position: fixed;
             top: 0;
@@ -38,29 +33,15 @@
             height: 100%;
             background: linear-gradient(135deg, #0ea5e9 0%, #0891b2 50%, #14b8a6 100%);
             background-size: 400% 400%;
-            animation: dentalGradient 20s ease infinite;
+            animation: gradient 20s ease infinite;
             z-index: -1;
         }
         
-        @keyframes dentalGradient {
-            0% { background-position: 0% 50%; }
+        @keyframes gradient {
+            0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
         
-        /* Floating tooth pattern */
-        .tooth-pattern {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' style='font-size: 40px;'%3E🦷%3C/text%3E%3C/svg%3E");
-            z-index: -1;
-        }
-        
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -69,33 +50,27 @@
             align-items: center;
             text-align: center;
             padding: 60px 20px;
-            position: relative;
         }
         
         .logo {
-            font-size: 20px;
-            font-weight: 800;
-            color: white;
             position: absolute;
             top: 30px;
             left: 40px;
+            font-size: 24px;
+            font-weight: 900;
+            color: white;
             display: flex;
             align-items: center;
             gap: 10px;
         }
         
-        .logo-icon {
-            font-size: 32px;
-        }
-        
         .hero h1 {
-            font-size: clamp(36px, 8vw, 78px);
+            font-size: clamp(36px, 7vw, 72px);
             font-weight: 900;
             color: white;
             margin-bottom: 30px;
             line-height: 1.1;
             text-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            animation: fadeInUp 1s ease;
         }
         
         .hero h1 .highlight {
@@ -106,74 +81,19 @@
         }
         
         .hero .subtitle {
-            font-size: clamp(20px, 3vw, 32px);
+            font-size: clamp(20px, 3vw, 28px);
             color: rgba(255, 255, 255, 0.95);
             margin-bottom: 50px;
             font-weight: 600;
-            max-width: 900px;
-            animation: fadeInUp 1.2s ease;
+            max-width: 800px;
         }
         
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Premium Stats */
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 60px auto;
-            animation: fadeInUp 1.4s ease;
-        }
-        
-        .stat-card {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(20px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 24px;
-            padding: 40px 30px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-        
-        .stat-card:hover {
-            transform: translateY(-15px) scale(1.05);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-            background: rgba(255, 255, 255, 0.25);
-        }
-        
-        .stat-number {
-            font-size: 56px;
-            font-weight: 900;
-            color: white;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            margin-bottom: 10px;
-        }
-        
-        .stat-label {
-            font-size: 17px;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 600;
-            line-height: 1.4;
-        }
-        
-        /* CTA Buttons */
         .cta-container {
             display: flex;
             gap: 25px;
             justify-content: center;
             flex-wrap: wrap;
-            margin: 50px 0;
-            animation: fadeInUp 1.6s ease;
+            margin: 40px 0;
         }
         
         .btn {
@@ -193,7 +113,6 @@
         
         .btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         }
         
         .btn-primary {
@@ -206,389 +125,209 @@
             color: #0ea5e9;
         }
         
-        /* Content Sections */
         .section {
-            padding: 120px 20px;
-            position: relative;
-        }
-        
-        .section-white {
+            padding: 100px 20px;
             background: white;
         }
         
-        .section-light {
-            background: #f8fafc;
-        }
-        
         .container {
-            max-width: 1300px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         
         .section-title {
             text-align: center;
-            font-size: clamp(36px, 5vw, 56px);
+            font-size: clamp(32px, 5vw, 48px);
             font-weight: 900;
-            margin-bottom: 70px;
+            margin-bottom: 50px;
             color: #0f172a;
         }
         
-        .section-title .tooth-icon {
-            font-size: 1.2em;
-            vertical-align: middle;
-        }
-        
-        /* Problem Section */
-        .problem-grid {
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin: 60px 0;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
         }
         
-        .problem-card {
-            background: linear-gradient(135deg, #fef2f2, #fee2e2);
-            border: 3px solid #ef4444;
-            border-radius: 24px;
-            padding: 40px;
-            transition: all 0.3s ease;
-        }
-        
-        .problem-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(239, 68, 68, 0.2);
-        }
-        
-        .problem-icon {
-            font-size: 64px;
-            margin-bottom: 20px;
-        }
-        
-        .problem-title {
-            font-size: 26px;
-            font-weight: 800;
-            color: #dc2626;
-            margin-bottom: 20px;
-        }
-        
-        .problem-desc {
-            font-size: 17px;
-            color: #991b1b;
-            line-height: 1.7;
-        }
-        
-        /* Solution Grid */
-        .solution-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 35px;
-            margin: 60px 0;
-        }
-        
-        .solution-card {
+        .feature-card {
             background: white;
             border: 3px solid #e0f2fe;
             border-radius: 24px;
             padding: 40px;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
         
-        .solution-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.1), transparent);
-            transition: left 0.5s;
-        }
-        
-        .solution-card:hover {
+        .feature-card:hover {
             transform: translateY(-10px);
             border-color: #0ea5e9;
             box-shadow: 0 20px 60px rgba(14, 165, 233, 0.2);
         }
         
-        .solution-card:hover::before {
-            left: 100%;
-        }
-        
-        .solution-icon {
+        .feature-icon {
             font-size: 56px;
-            margin-bottom: 25px;
-        }
-        
-        .solution-title {
-            font-size: 24px;
-            font-weight: 800;
-            color: #0ea5e9;
-            margin-bottom: 18px;
-        }
-        
-        .solution-desc {
-            font-size: 16px;
-            color: #475569;
-            line-height: 1.8;
             margin-bottom: 20px;
         }
         
-        .solution-badge {
-            display: inline-block;
-            padding: 8px 18px;
-            background: linear-gradient(135deg, #0ea5e9, #14b8a6);
-            color: white;
-            border-radius: 25px;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .feature-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #0ea5e9;
+            margin-bottom: 15px;
         }
         
-        /* Demo Section */
+        .feature-desc {
+            font-size: 16px;
+            color: #475569;
+            line-height: 1.8;
+        }
+        
         .demo-section {
             background: linear-gradient(135deg, #0f172a, #1e293b);
             padding: 100px 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .demo-section::before {
-            content: '🦷';
-            position: absolute;
-            font-size: 400px;
-            opacity: 0.03;
-            top: -100px;
-            right: -100px;
-            transform: rotate(-15deg);
         }
         
         .demo-container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
             border: 2px solid rgba(255, 255, 255, 0.1);
             border-radius: 32px;
-            padding: 70px 50px;
-            box-shadow: 0 30px 90px rgba(0,0,0,0.5);
+            padding: 60px 40px;
+            text-align: center;
         }
         
         .demo-title {
-            text-align: center;
-            font-size: clamp(32px, 5vw, 48px);
+            font-size: clamp(32px, 5vw, 42px);
             font-weight: 900;
             color: white;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
         .demo-subtitle {
-            text-align: center;
-            font-size: 22px;
+            font-size: 20px;
             color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 50px;
-        }
-        
-        .quick-test-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin: 50px 0;
-        }
-        
-        .quick-test-card {
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .quick-test-card:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: #fbbf24;
-            transform: scale(1.05);
-        }
-        
-        .quick-test-icon {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
-        
-        .quick-test-text {
-            font-size: 18px;
-            font-weight: 700;
-            color: white;
-        }
-        
-        /* Testimonial */
-        .testimonial-section {
-            background: linear-gradient(135deg, #fef3c7, #fde68a);
-            padding: 100px 20px;
-        }
-        
-        .testimonial-card {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 32px;
-            padding: 60px;
-            box-shadow: 0 30px 90px rgba(0,0,0,0.15);
-            position: relative;
-        }
-        
-        .quote-icon {
-            font-size: 80px;
-            color: #fbbf24;
-            position: absolute;
-            top: 20px;
-            left: 40px;
-            opacity: 0.3;
-        }
-        
-        .testimonial-text {
-            font-size: 24px;
-            line-height: 1.7;
-            color: #1e293b;
-            font-weight: 500;
-            font-style: italic;
             margin-bottom: 40px;
         }
         
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-        
-        .author-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #0ea5e9, #14b8a6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
-        }
-        
-        .author-info h4 {
-            font-size: 22px;
-            font-weight: 800;
-            color: #0f172a;
-            margin-bottom: 5px;
-        }
-        
-        .author-info p {
-            font-size: 17px;
-            color: #64748b;
-        }
-        
-        .testimonial-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 50px;
-            padding-top: 40px;
-            border-top: 3px solid #f1f5f9;
-        }
-        
-        .testimonial-stat {
-            text-align: center;
-        }
-        
-        .testimonial-stat-number {
-            font-size: 42px;
-            font-weight: 900;
-            color: #10b981;
-            margin-bottom: 5px;
-        }
-        
-        .testimonial-stat-label {
-            font-size: 15px;
-            color: #64748b;
-        }
-        
-        /* ROI Calculator */
-        .roi-section {
-            background: white;
+        .pricing-section {
+            background: #f8fafc;
             padding: 100px 20px;
         }
         
-        .roi-calculator {
-            max-width: 900px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, #f8fafc, #e0f2fe);
-            border: 3px solid #0ea5e9;
-            border-radius: 32px;
-            padding: 60px 50px;
-            box-shadow: 0 20px 60px rgba(14, 165, 233, 0.15);
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 50px auto;
         }
         
-        .calculator-input {
+        .pricing-card {
+            background: white;
+            border: 3px solid #e5e7eb;
+            border-radius: 24px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .pricing-card.popular {
+            border-color: #0ea5e9;
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(14, 165, 233, 0.3);
+        }
+        
+        .pricing-card.popular::before {
+            content: '⭐ MOST POPULAR';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #0ea5e9, #14b8a6);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .pricing-card.popular .card-content {
+            margin-top: 25px;
+        }
+        
+        .plan-name {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #0f172a;
+        }
+        
+        .plan-price {
+            font-size: 42px;
+            font-weight: 900;
+            color: #0ea5e9;
+            margin-bottom: 10px;
+        }
+        
+        .plan-price .period {
+            font-size: 18px;
+            color: #6b7280;
+            font-weight: normal;
+        }
+        
+        .plan-features {
+            list-style: none;
             margin: 30px 0;
         }
         
-        .calculator-input label {
-            display: block;
-            font-size: 18px;
-            font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 12px;
+        .plan-features li {
+            padding: 15px 0;
+            border-bottom: 1px solid #f3f4f6;
+            font-size: 16px;
+            color: #4b5563;
+            text-align: left;
         }
         
-        .calculator-input input,
-        .calculator-input select {
-            width: 100%;
-            padding: 18px 22px;
-            font-size: 18px;
-            background: white;
-            border: 2px solid #cbd5e1;
-            border-radius: 16px;
-            color: #1e293b;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .calculator-input input:focus,
-        .calculator-input select:focus {
-            outline: none;
-            border-color: #0ea5e9;
-            box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
-        }
-        
-        .calculator-results {
-            margin-top: 50px;
-            padding: 40px;
-            background: white;
-            border-radius: 24px;
-            border: 3px solid #10b981;
-            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.15);
-        }
-        
-        .result-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px 0;
-            border-bottom: 2px solid #f1f5f9;
-            font-size: 18px;
-        }
-        
-        .result-row:last-child {
-            border-bottom: none;
-            font-size: 28px;
-            font-weight: 900;
-            padding-top: 30px;
-            border-top: 4px solid #10b981;
+        .plan-features li::before {
+            content: '✓';
             color: #10b981;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
         }
         
-        /* Lead Form */
+        .plan-features li.disabled {
+            text-decoration: line-through;
+            opacity: 0.4;
+        }
+        
+        .plan-features li.disabled::before {
+            content: '✗';
+            color: #ef4444;
+        }
+        
+        .buy-button {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #0ea5e9, #14b8a6);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 25px;
+            transition: all 0.3s;
+        }
+        
+        .buy-button:hover {
+            transform: scale(1.05);
+        }
+        
         .lead-section {
             background: linear-gradient(135deg, #0ea5e9, #0891b2);
             padding: 100px 20px;
@@ -601,16 +340,10 @@
         }
         
         .lead-section h2 {
-            font-size: clamp(32px, 5vw, 52px);
+            font-size: clamp(32px, 5vw, 48px);
             font-weight: 900;
             color: white;
-            margin-bottom: 25px;
-        }
-        
-        .lead-section .subtitle {
-            font-size: 22px;
-            color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 50px;
+            margin-bottom: 20px;
         }
         
         .lead-form {
@@ -618,19 +351,18 @@
             backdrop-filter: blur(20px);
             border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 32px;
-            padding: 50px 40px;
+            padding: 40px;
         }
         
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             text-align: left;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 700;
-            font-size: 16px;
             color: white;
         }
         
@@ -638,14 +370,13 @@
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 18px 20px;
-            font-size: 17px;
+            padding: 15px;
+            font-size: 16px;
             background: rgba(255, 255, 255, 0.95);
             border: 2px solid transparent;
-            border-radius: 16px;
+            border-radius: 12px;
             color: #1e293b;
             font-weight: 600;
-            transition: all 0.3s ease;
         }
         
         .form-group input:focus,
@@ -654,54 +385,28 @@
             outline: none;
             background: white;
             border-color: #fbbf24;
-            box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.2);
-        }
-        
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
         }
         
         .form-submit {
             width: 100%;
-            padding: 22px;
-            font-size: 22px;
+            padding: 20px;
+            font-size: 20px;
             font-weight: 900;
             background: linear-gradient(135deg, #fbbf24, #f59e0b);
             color: #1e293b;
             border: none;
             border-radius: 60px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s;
         }
         
         .form-submit:hover {
             transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
         }
         
-        .trust-badges {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 35px;
-            flex-wrap: wrap;
-        }
-        
-        .trust-badge {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 16px;
-            color: white;
-            font-weight: 700;
-        }
-        
-        /* Footer */
         .footer {
             background: #0f172a;
-            padding: 70px 20px 40px;
+            padding: 60px 20px 30px;
             text-align: center;
             color: rgba(255, 255, 255, 0.8);
         }
@@ -710,12 +415,12 @@
             font-size: 28px;
             font-weight: 900;
             color: white;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         
         .footer-contact {
             font-size: 18px;
-            margin: 15px 0;
+            margin: 12px 0;
         }
         
         .footer-contact a {
@@ -724,384 +429,228 @@
             font-weight: 700;
         }
         
-        .footer-contact a:hover {
-            color: #14b8a6;
-        }
-        
-        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .hero-stats {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .problem-grid,
-            .solution-grid {
+            .features-grid, .pricing-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .testimonial-stats {
-                grid-template-columns: 1fr;
-            }
-            
             .logo {
                 position: static;
                 justify-content: center;
-                margin-bottom: 40px;
+                margin-bottom: 30px;
             }
-        }
-        
-        /* Pulse animation for important elements */
-        @keyframes pulse-glow {
-            0%, 100% {
-                box-shadow: 0 10px 30px rgba(251, 191, 36, 0.5);
+            .pricing-card.popular {
+                transform: scale(1);
             }
-            50% {
-                box-shadow: 0 10px 50px rgba(251, 191, 36, 0.8);
-            }
-        }
-        
-        .btn-primary {
-            animation: pulse-glow 2s ease-in-out infinite;
         }
     </style>
 </head>
 <body>
     <div class="hero-bg"></div>
-    <div class="tooth-pattern"></div>
     
-    <!-- Hero Section -->
     <section class="hero">
         <div class="logo">
-            <span class="logo-icon">🦷</span>
+            <span style="font-size: 32px;">🦷</span>
             <span>Clarity Pearl</span>
         </div>
         
         <h1>
-            Stop Losing <span class="highlight">$18,000/Month</span><br>
-            in After-Hours Dental Emergencies
+            Capture <span class="highlight">After-Hours</span><br>
+            Dental Emergencies 24/7
         </h1>
         
         <p class="subtitle">
-            The Only AI Receptionist Built Exclusively for Dental Practices.<br>
-            Capture Every Emergency. Book Every Patient. 24/7/365.
+            Never lose another broken tooth emergency to voicemail.<br>
+            AI responds in seconds. You call them back with their info ready.
         </p>
         
         <div class="cta-container">
             <a href="#demo" class="btn btn-primary">
-                🦷 Try Live Dental Demo
+                🦷 Try Live Demo
             </a>
-            <a href="#calculator" class="btn btn-secondary">
-                💰 Calculate Your Lost Revenue
+            <a href="#pricing" class="btn btn-secondary">
+                💰 See Pricing
             </a>
         </div>
-        
-        <div class="hero-stats">
-            <div class="stat-card">
-                <div class="stat-number">35-45</div>
-                <div class="stat-label">After-Hours Emergency Calls You're Missing Monthly</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">$52,500</div>
-                <div class="stat-label">Average Revenue Captured in 90 Days</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">< 3 sec</div>
-                <div class="stat-label">Response Time for Broken Tooth Emergencies</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">7 Days</div>
-                <div class="stat-label">From Setup to Capturing Patients</div>
-            </div>
-        </div>
     </section>
     
-    <!-- Problem Section -->
-    <section class="section section-white">
+    <section class="section">
         <div class="container">
-            <h2 class="section-title">
-                <span class="tooth-icon">🚨</span> The 3 Revenue Killers Costing You $180K+ Annually
-            </h2>
+            <h2 class="section-title">What You Get (100% Working Now)</h2>
             
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <div class="problem-icon">🌙</div>
-                    <h3 class="problem-title">The Saturday Night Emergency Black Hole</h3>
-                    <p class="problem-desc">
-                        8pm Saturday: Patient breaks crown on popcorn. Calls your practice → Voicemail. 
-                        Googles "emergency dentist open now" → Your competitor answers → You lost a 
-                        $2,500 crown + $5,000 lifetime patient.
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3 class="feature-title">24/7 Emergency Response</h3>
+                    <p class="feature-desc">
+                        Patient breaks tooth at 8pm Saturday? AI answers in 3 seconds via website chat. 
+                        Captures their name, phone, emergency details. You call back Monday morning.
                     </p>
                 </div>
                 
-                <div class="problem-card">
-                    <div class="problem-icon">📞</div>
-                    <h3 class="problem-title">New Patient Phone Tag Nightmare</h3>
-                    <p class="problem-desc">
-                        They call Monday 9am (you're with a patient). You call back at 10:30 (they're at work). 
-                        They try again at lunch (your staff is at lunch). By Tuesday, they've booked with a 
-                        competitor who answered in 3 seconds.
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">WhatsApp Integration</h3>
+                    <p class="feature-desc">
+                        Patients can text your practice WhatsApp. "Broke my crown, need help!" AI responds 
+                        instantly, collects info. Built into Chatbase - no extra setup.
                     </p>
                 </div>
                 
-                <div class="problem-card">
-                    <div class="problem-icon">😫</div>
-                    <h3 class="problem-title">Front Desk Overwhelm & Booking Errors</h3>
-                    <p class="problem-desc">
-                        3 lines ringing. Patient asking about insurance while another needs emergency slot. 
-                        Receptionist stressed, makes booking error, double-books hygienist. 30% of calls don't 
-                        convert to appointments due to friction.
+                <div class="feature-card">
+                    <div class="feature-icon">🌎</div>
+                    <h3 class="feature-title">Spanish Language (Auto-Detect)</h3>
+                    <p class="feature-desc">
+                        Patient writes in Spanish? AI automatically responds in Spanish. Handles 95+ languages. 
+                        No extra configuration needed.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3 class="feature-title">Lead Capture & Notifications</h3>
+                    <p class="feature-desc">
+                        Every emergency captured: name, phone, pain description, urgency level. You get 
+                        instant email notification with all details.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🦷</div>
+                    <h3 class="feature-title">Dental FAQ Answering</h3>
+                    <p class="feature-desc">
+                        "How much for cleaning?" "Do you take my insurance?" "What are your hours?" 
+                        AI answers using your practice information you provide.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">Custom Branding</h3>
+                    <p class="feature-desc">
+                        Your logo, your colors, your practice name. Looks like part of your website. 
+                        Professional and trustworthy.
                     </p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Solution Section -->
-    <section class="section section-light">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="tooth-icon">🦷</span> Meet DentalPearl AI™
-            </h2>
-            <p style="text-align: center; font-size: 24px; color: #475569; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                The only AI receptionist built exclusively for dental practices. Works 24/7. 
-                Integrates with Dentrix, Eaglesoft, Open Dental. Speaks Spanish.
-            </p>
-            
-            <div class="solution-grid">
-                <div class="solution-card">
-                    <div class="solution-icon">⚡</div>
-                    <h3 class="solution-title">Emergency Triage & Booking</h3>
-                    <p class="solution-desc">
-                        Asks severity questions (pain 1-10, swelling, bleeding). Books urgent slots for true 
-                        emergencies. Provides interim care advice. Notifies you via SMS for critical cases.
-                    </p>
-                    <span class="solution-badge">Dentrix Ready</span>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-icon">📅</div>
-                    <h3 class="solution-title">Auto-Booking in Your Practice Software</h3>
-                    <p class="solution-desc">
-                        Syncs directly with Dentrix, Eaglesoft, Open Dental, Curve. Shows available hygienist 
-                        and doctor slots. Books new patient exams, cleanings, emergencies. Zero manual entry.
-                    </p>
-                    <span class="solution-badge">All PM Software</span>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-icon">🌎</div>
-                    <h3 class="solution-title">Bilingual (Spanish + English)</h3>
-                    <p class="solution-desc">
-                        Detects language automatically. 28% of dental patients prefer Spanish. Answers questions 
-                        about "coronas," "limpiezas," "emergencias" fluently. No extra setup needed.
-                    </p>
-                    <span class="solution-badge">Auto-Detect</span>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-icon">💳</div>
-                    <h3 class="solution-title">Insurance Verification</h3>
-                    <p class="solution-desc">
-                        "Do you take my Delta Dental PPO?" → Checks your panel list → "Yes! And we're in-network. 
-                        Would you like to book?" Reduces front desk insurance questions by 60%.
-                    </p>
-                    <span class="solution-badge">PPO/HMO</span>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-icon">📱</div>
-                    <h3 class="solution-title">WhatsApp for Dental Emergencies</h3>
-                    <p class="solution-desc">
-                        Patients text your dental practice WhatsApp. "Broke my tooth, need help!" → AI responds 
-                        in 3 seconds → Books emergency slot → Sends office address. Perfect for urgent cases.
-                    </p>
-                    <span class="solution-badge">Instant Access</span>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-icon">💬</div>
-                    <h3 class="solution-title">SMS Appointment Reminders</h3>
-                    <p class="solution-desc">
-                        Auto-sends reminders 24hrs before: "Hi Sarah, this is Dr. Smith's office reminding you 
-                        about your cleaning tomorrow at 2pm. Reply C to confirm." Reduces no-shows by 50%.
-                    </p>
-                    <span class="solution-badge">Built-In</span>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-icon">📋</div>
-                    <h3 class="solution-title">New Patient Intake Forms</h3>
-                    <p class="solution-desc">
-                        Collects medical history, medications, allergies, dental insurance, emergency contact 
-                        before appointment. Patient fills out via text. Syncs to your practice management software.
-                    </p>
-                    <span class="solution-badge">HIPAA Secure</span>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-icon">🦷</div>
-                    <h3 class="solution-title">Dental-Specific Knowledge</h3>
-                    <p class="solution-desc">
-                        Pre-trained on dental terminology. Knows crowns, bridges, root canals, Invisalign, implants, 
-                        extractions, cleanings. Answers "How much for a crown?" with YOUR pricing.
-                    </p>
-                    <span class="solution-badge">Dental Expert</span>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-icon">📧</div>
-                    <h3 class="solution-title">Email Confirmations & Follow-Ups</h3>
-                    <p class="solution-desc">
-                        Sends appointment confirmations via email. After visit, sends "How was your experience?" 
-                        Requests Google reviews from happy patients. Builds your 5-star reputation automatically.
-                    </p>
-                    <span class="solution-badge">Auto-Pilot</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Demo Section -->
     <section class="demo-section" id="demo">
         <div class="demo-container">
-            <h2 class="demo-title">🎯 Try It Live - No Signup Required</h2>
-            <p class="demo-subtitle">Ask about dental emergencies, insurance, pricing, or book a cleaning. See 3-second response time.</p>
+            <h2 class="demo-title">Try It Live Right Now</h2>
+            <p class="demo-subtitle">
+                Ask about dental emergencies, services, or pricing.<br>
+                See 3-second response time.
+            </p>
             
-            <div class="quick-test-grid">
-                <div class="quick-test-card">
-                    <div class="quick-test-icon">🚨</div>
-                    <div class="quick-test-text">"I broke my tooth, need emergency"</div>
-                </div>
-                <div class="quick-test-card">
-                    <div class="quick-test-icon">💰</div>
-                    <div class="quick-test-text">"How much for a crown?"</div>
-                </div>
-                <div class="quick-test-card">
-                    <div class="quick-test-icon">💳</div>
-                    <div class="quick-test-text">"Do you take Delta Dental?"</div>
-                </div>
-                <div class="quick-test-card">
-                    <div class="quick-test-icon">📅</div>
-                    <div class="quick-test-text">"Book cleaning for Saturday"</div>
-                </div>
-            </div>
-            
-            <p style="text-align: center; font-size: 20px; color: white; margin: 50px 0 40px 0; font-weight: 700;">
-                👇 Click the chat bubble in bottom-right corner to start
+            <p style="font-size: 20px; color: white; margin: 40px 0; font-weight: 700;">
+                👇 Click chat bubble in bottom-right corner
             </p>
             
             <div class="cta-container">
-                <a href="https://wa.me/256705885118?text=Hi!%20I%20want%20DentalPearl%20AI%20for%20my%20practice" class="btn btn-primary" target="_blank">
+                <a href="https://wa.me/256705885118?text=Hi!%20I%20want%20the%20dental%20emergency%20AI" class="btn btn-primary" target="_blank">
                     📱 Get It On WhatsApp
                 </a>
                 <a href="mailto:nsubugacollin@gmail.com" class="btn btn-secondary">
-                    📧 Email for Custom Demo
+                    📧 Email for Demo
                 </a>
             </div>
         </div>
     </section>
     
-    <!-- Testimonial -->
-    <section class="testimonial-section">
+    <section class="pricing-section" id="pricing">
         <div class="container">
-            <div class="testimonial-card">
-                <div class="quote-icon">"</div>
-                <p class="testimonial-text">
-                    "I was skeptical. But this changed everything. We set it up in 6 days. First week: 
-                    8 emergency patients we would've lost. Three months later: $52,500 in revenue from 
-                    after-hours calls. My front desk staff is less stressed. No-shows dropped from 25% to 12%. 
-                    And I'm not getting 2am emergency calls anymore. My only regret? Not doing this two years ago."
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">🦷</div>
-                    <div class="author-info">
-                        <h4>Dr. Sarah Mitchell, DDS</h4>
-                        <p>Bright Smile Dental - Miami, FL</p>
-                    </div>
-                </div>
-                <div class="testimonial-stats">
-                    <div class="testimonial-stat">
-                        <div class="testimonial-stat-number">$52,500</div>
-                        <div class="testimonial-stat-label">New Revenue (90 Days)</div>
-                    </div>
-                    <div class="testimonial-stat">
-                        <div class="testimonial-stat-number">105</div>
-                        <div class="testimonial-stat-label">Emergency Patients Captured</div>
-                    </div>
-                    <div class="testimonial-stat">
-                        <div class="testimonial-stat-number">2,591%</div>
-                        <div class="testimonial-stat-label">Return on Investment</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- ROI Calculator -->
-    <section class="roi-section" id="calculator">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="tooth-icon">💰</span> Calculate Your Lost Revenue
-            </h2>
-            <p style="text-align: center; font-size: 20px; color: #475569; margin-bottom: 50px;">
-                See exactly how much your practice is losing every month
+            <h2 class="section-title">Simple, Honest Pricing</h2>
+            <p style="text-align: center; font-size: 20px; color: #475569; margin-bottom: 40px;">
+                No hidden fees. No fake promises. Just what works.
             </p>
             
-            <div class="roi-calculator">
-                <div class="calculator-input">
-                    <label>Monthly Patient Calls/Inquiries</label>
-                    <input type="number" id="monthlyLeads" value="100" min="0">
-                </div>
-                
-                <div class="calculator-input">
-                    <label>Average New Patient Value (First Visit)</label>
-                    <input type="number" id="customerValue" value="750" min="0">
-                </div>
-                
-                <div class="calculator-input">
-                    <label>% of Calls After Hours (5pm-8am, Weekends)</label>
-                    <input type="number" id="afterHoursPercent" value="40" min="0" max="100">
-                </div>
-                
-                <button onclick="calculateDentalROI()" class="btn btn-primary" style="width: 100%; margin-top: 30px; animation: none;">
-                    Calculate My Lost Revenue
-                </button>
-                
-                <div id="results" class="calculator-results" style="display: none;">
-                    <div class="result-row">
-                        <span>After-hours emergency calls you're missing:</span>
-                        <span id="missedLeads">-</span>
-                    </div>
-                    <div class="result-row">
-                        <span>Monthly lost revenue:</span>
-                        <span id="monthlyLost" style="color: #ef4444; font-weight: 800;">-</span>
-                    </div>
-                    <div class="result-row">
-                        <span>Annual lost revenue:</span>
-                        <span id="annualLost" style="color: #dc2626; font-weight: 800;">-</span>
-                    </div>
-                    <div class="result-row">
-                        <span>DentalPearl AI cost (Year 1):</span>
-                        <span id="cost">$9,200</span>
-                    </div>
-                    <div class="result-row">
-                        <span>💰 Your Net Profit (Year 1):</span>
-                        <span id="profit">-</span>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="card-content">
+                        <div class="plan-name">Starter</div>
+                        <div class="plan-price">$100<span class="period">/mo</span></div>
+                        <p style="color: #6b7280; margin-bottom: 20px;">$500 one-time setup</p>
+                        
+                        <ul class="plan-features">
+                            <li>Website chat widget (24/7)</li>
+                            <li>Emergency lead capture</li>
+                            <li>Email notifications</li>
+                            <li>Spanish auto-detect</li>
+                            <li>Dental FAQ answering</li>
+                            <li>Custom branding</li>
+                            <li class="disabled">WhatsApp integration</li>
+                            <li class="disabled">Auto-booking (future)</li>
+                            <li class="disabled">SMS reminders (future)</li>
+                        </ul>
+                        
+                        <a href="#contact" class="buy-button">Start with Starter</a>
                     </div>
                 </div>
+                
+                <div class="pricing-card popular">
+                    <div class="card-content">
+                        <div class="plan-name">Professional</div>
+                        <div class="plan-price">$200<span class="period">/mo</span></div>
+                        <p style="color: #6b7280; margin-bottom: 20px;">$800 one-time setup</p>
+                        
+                        <ul class="plan-features">
+                            <li><strong>Everything in Starter PLUS:</strong></li>
+                            <li>WhatsApp integration</li>
+                            <li>Facebook Messenger</li>
+                            <li>Priority setup (3 days)</li>
+                            <li>Monthly optimization</li>
+                            <li>Conversation history export</li>
+                            <li class="disabled">Auto-booking (coming soon)</li>
+                            <li class="disabled">SMS reminders (coming soon)</li>
+                            <li class="disabled">Dentrix sync (future upgrade)</li>
+                        </ul>
+                        
+                        <a href="#contact" class="buy-button">Choose Professional</a>
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="card-content">
+                        <div class="plan-name">Enterprise</div>
+                        <div class="plan-price">Custom</div>
+                        <p style="color: #6b7280; margin-bottom: 20px;">Let's talk</p>
+                        
+                        <ul class="plan-features">
+                            <li><strong>For multi-location practices</strong></li>
+                            <li>Everything in Professional</li>
+                            <li>Custom integrations (we build it)</li>
+                            <li>Dentrix/Eaglesoft sync (custom)</li>
+                            <li>SMS reminders via Twilio</li>
+                            <li>Email automations</li>
+                            <li>Dedicated support</li>
+                            <li>Monthly strategy calls</li>
+                        </ul>
+                        
+                        <a href="https://wa.me/256705885118" class="buy-button" target="_blank">Contact for Quote</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="max-width: 800px; margin: 50px auto; background: #fef3c7; border: 3px solid #fbbf24; border-radius: 20px; padding: 30px; text-align: center;">
+                <h3 style="color: #d97706; margin-bottom: 15px; font-size: 24px;">💯 30-Day Guarantee</h3>
+                <p style="font-size: 17px; color: #92400e; line-height: 1.7;">
+                    If you don't capture at least <strong>5 emergency leads</strong> in the first 30 days, 
+                    I'll refund your setup fee in full. No questions asked.
+                </p>
             </div>
         </div>
     </section>
     
-    <!-- Lead Form -->
     <section class="lead-section" id="contact">
         <div class="lead-container">
-            <h2>🚀 Get DentalPearl AI™ in 7 Days</h2>
-            <p class="subtitle">Fill out this form. We'll send you a custom demo + ROI calculation within 2 hours.</p>
+            <h2>🚀 Ready to Stop Losing Emergencies?</h2>
+            <p style="font-size: 20px; color: rgba(255,255,255,0.95); margin-bottom: 40px;">
+                Setup takes 3-5 days. You'll be capturing leads this week.
+            </p>
             
             <div class="lead-form">
-                <form id="leadForm" action="https://formspree.io/f/xanpgnwr" method="POST">
+                <form action="https://formspree.io/f/xanpgnwr" method="POST">
                     <div class="form-group">
                         <label>Your Name *</label>
                         <input type="text" name="name" required placeholder="Dr. John Smith">
@@ -1113,160 +662,54 @@
                     </div>
                     
                     <div class="form-group">
-                        <label>Email Address *</label>
-                        <input type="email" name="email" required placeholder="drsmith@brightsmiledental.com">
+                        <label>Email *</label>
+                        <input type="email" name="email" required placeholder="drsmith@example.com">
                     </div>
                     
                     <div class="form-group">
-                        <label>Phone Number (WhatsApp preferred) *</label>
+                        <label>Phone (WhatsApp) *</label>
                         <input type="tel" name="phone" required placeholder="+1 (555) 123-4567">
                     </div>
                     
                     <div class="form-group">
-                        <label>Number of Dental Chairs</label>
-                        <select name="chairs">
-                            <option value="">Select...</option>
-                            <option value="1-3">1-3 chairs (Solo practice)</option>
-                            <option value="4-6">4-6 chairs (Growing practice)</option>
-                            <option value="7-10">7-10 chairs (Established practice)</option>
-                            <option value="11+">11+ chairs (Multi-location)</option>
+                        <label>Which Package?</label>
+                        <select name="package">
+                            <option value="starter">Starter - $500 + $100/mo</option>
+                            <option value="professional">Professional - $800 + $200/mo</option>
+                            <option value="enterprise">Enterprise - Custom quote</option>
+                            <option value="not-sure">Not sure - Show me options</option>
                         </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Practice Management Software</label>
-                        <select name="software">
-                            <option value="">Select...</option>
-                            <option value="dentrix">Dentrix</option>
-                            <option value="eaglesoft">Eaglesoft</option>
-                            <option value="opendental">Open Dental</option>
-                            <option value="curve">Curve</option>
-                            <option value="denticon">Denticon</option>
-                            <option value="other">Other</option>
-                            <option value="none">Don't have one yet</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Biggest Challenge? (Optional)</label>
-                        <textarea name="message" placeholder="e.g., Missing 20+ emergency calls per month, Staff overwhelmed with phones, Need Spanish language support..."></textarea>
                     </div>
                     
                     <button type="submit" class="form-submit">
-                        🦷 Get My Custom Dental Demo
+                        Get Started Today
                     </button>
                 </form>
-                
-                <div class="trust-badges">
-                    <div class="trust-badge">
-                        <span>✅</span>
-                        <span>30-Day Money-Back Guarantee</span>
-                    </div>
-                    <div class="trust-badge">
-                        <span>⚡</span>
-                        <span>Live in 7 Days</span>
-                    </div>
-                    <div class="trust-badge">
-                        <span>🔒</span>
-                        <span>HIPAA Compliant</span>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
     
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-logo">
-            <span style="font-size: 36px; vertical-align: middle;">🦷</span> Clarity Pearl
+            <span style="font-size: 32px;">🦷</span> Clarity Pearl
         </div>
-        <p style="font-size: 20px; margin: 25px 0; color: rgba(255,255,255,0.9);">
-            The Only AI Receptionist Built Exclusively for Dental Practices
+        <p style="font-size: 18px; margin-bottom: 20px;">
+            Honest AI solutions for dental practices
         </p>
         <div class="footer-contact">
-            📱 WhatsApp: <a href="https://wa.me/256705885118" target="_blank">+256 705 885118</a>
+            📱 WhatsApp: <a href="https://wa.me/256705885118">+256 705 885118</a>
         </div>
         <div class="footer-contact">
             📧 Email: <a href="mailto:nsubugacollin@gmail.com">nsubugacollin@gmail.com</a>
         </div>
-        <div class="footer-contact">
-            🌐 Kampala, Uganda | Serving Dental Practices Worldwide
-        </div>
-        <p style="margin-top: 40px; font-size: 14px; opacity: 0.6;">
-            © 2024 Clarity Pearl. All Rights Reserved.<br>
-            Built with precision for dental professionals who refuse to lose patients.
+        <p style="margin-top: 30px; font-size: 14px; opacity: 0.6;">
+            © 2024 Clarity Pearl by Collin Nsubuga | Kampala, Uganda
         </p>
     </footer>
     
-    <!-- Chatbase Embed -->
+    <!-- Chatbase -->
     <script>
     (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="e2723_IYRTaOWIy8y2GBS";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-    </script>
-    
-    <!-- ROI Calculator Script -->
-    <script>
-    function calculateDentalROI() {
-        const monthlyLeads = parseInt(document.getElementById('monthlyLeads').value) || 0;
-        const customerValue = parseFloat(document.getElementById('customerValue').value) || 0;
-        const afterHoursPercent = parseInt(document.getElementById('afterHoursPercent').value) || 0;
-        
-        // Dental-specific calculations
-        const missedCalls = Math.round((monthlyLeads * afterHoursPercent) / 100);
-        const currentCaptureRate = 0.12; // 12% callback rate
-        const aiCaptureRate = 0.80; // 80% with AI
-        
-        const currentCaptures = Math.round(missedCalls * currentCaptureRate);
-        const aiCaptures = Math.round(missedCalls * aiCaptureRate);
-        const newCaptures = aiCaptures - currentCaptures;
-        
-        // Revenue calculations
-        const monthlyLost = newCaptures * customerValue;
-        const annualLost = monthlyLost * 12;
-        
-        // DentalPearl AI cost
-        const setupFee = 5000;
-        const monthlyFee = 350;
-        const firstYearCost = setupFee + (monthlyFee * 12);
-        
-        // Profit
-        const profit = annualLost - firstYearCost;
-        
-        // Display results
-        document.getElementById('results').style.display = 'block';
-        document.getElementById('missedLeads').textContent = missedCalls + ' emergency calls/month';
-        document.getElementById('monthlyLost').textContent = ' + monthlyLost.toLocaleString();
-        document.getElementById('annualLost').textContent = ' + annualLost.toLocaleString();
-        document.getElementById('cost').textContent = ' + firstYearCost.toLocaleString();
-        document.getElementById('profit').textContent = ' + profit.toLocaleString();
-        
-        // Scroll to results
-        document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-    
-    // Auto-calculate on page load
-    window.addEventListener('load', function() {
-        setTimeout(calculateDentalROI, 1500);
-    });
-    
-    // Form submission
-    document.getElementById('leadForm').addEventListener('submit', function(e) {
-        console.log('Dental practice lead submitted!');
-        // Add tracking here
-    });
-    
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
     </script>
 </body>
 </html>
