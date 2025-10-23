@@ -42,6 +42,16 @@
             50% { background-position: 100% 50%; }
         }
         
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
         .hero {
             min-height: 100vh;
             display: flex;
@@ -86,6 +96,34 @@
             margin-bottom: 50px;
             font-weight: 600;
             max-width: 800px;
+        }
+        
+        .interactive-banner {
+            background: rgba(251, 191, 36, 0.2);
+            backdrop-filter: blur(10px);
+            border: 3px solid #fbbf24;
+            border-radius: 20px;
+            padding: 30px 40px;
+            margin: 40px 0;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .interactive-banner h2 {
+            font-size: clamp(24px, 4vw, 42px);
+            color: white;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+        
+        .interactive-banner p {
+            font-size: clamp(18px, 2.5vw, 24px);
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 25px;
+        }
+        
+        .interactive-banner .arrow {
+            font-size: 48px;
+            animation: float 2s ease-in-out infinite;
         }
         
         .cta-container {
@@ -182,12 +220,12 @@
             line-height: 1.8;
         }
         
-        .demo-section {
+        .live-demo-section {
             background: linear-gradient(135deg, #0f172a, #1e293b);
             padding: 100px 20px;
         }
         
-        .demo-container {
+        .live-demo-container {
             max-width: 1000px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.05);
@@ -198,17 +236,28 @@
             text-align: center;
         }
         
-        .demo-title {
-            font-size: clamp(32px, 5vw, 42px);
+        .live-demo-title {
+            font-size: clamp(32px, 5vw, 48px);
             font-weight: 900;
             color: white;
             margin-bottom: 20px;
         }
         
-        .demo-subtitle {
-            font-size: 20px;
+        .live-demo-subtitle {
+            font-size: 22px;
             color: rgba(255, 255, 255, 0.85);
             margin-bottom: 40px;
+        }
+        
+        .chatbot-highlight {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 30px 0;
+            display: inline-block;
         }
         
         .pricing-section {
@@ -299,16 +348,6 @@
             margin-right: 12px;
         }
         
-        .plan-features li.disabled {
-            text-decoration: line-through;
-            opacity: 0.4;
-        }
-        
-        .plan-features li.disabled::before {
-            content: '✗';
-            color: #ef4444;
-        }
-        
         .buy-button {
             display: block;
             width: 100%;
@@ -325,82 +364,6 @@
         }
         
         .buy-button:hover {
-            transform: scale(1.05);
-        }
-        
-        .lead-section {
-            background: linear-gradient(135deg, #0ea5e9, #0891b2);
-            padding: 100px 20px;
-        }
-        
-        .lead-container {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .lead-section h2 {
-            font-size: clamp(32px, 5vw, 48px);
-            font-weight: 900;
-            color: white;
-            margin-bottom: 20px;
-        }
-        
-        .lead-form {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(20px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 32px;
-            padding: 40px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 700;
-            color: white;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            font-size: 16px;
-            background: rgba(255, 255, 255, 0.95);
-            border: 2px solid transparent;
-            border-radius: 12px;
-            color: #1e293b;
-            font-weight: 600;
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            background: white;
-            border-color: #fbbf24;
-        }
-        
-        .form-submit {
-            width: 100%;
-            padding: 20px;
-            font-size: 20px;
-            font-weight: 900;
-            background: linear-gradient(135deg, #fbbf24, #f59e0b);
-            color: #1e293b;
-            border: none;
-            border-radius: 60px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .form-submit:hover {
             transform: scale(1.05);
         }
         
@@ -463,27 +426,45 @@
             AI responds in seconds. You call them back with their info ready.
         </p>
         
+        <div class="interactive-banner">
+            <h2>👇 THIS IS WHAT YOU'RE BUYING 👇</h2>
+            <p>No demo video. No sales call. Just try it RIGHT NOW.</p>
+            <div class="arrow">⬇️</div>
+        </div>
+        
+        <div class="chatbot-highlight">
+            💬 See that chat bubble? Ask it ANYTHING about dental emergencies
+        </div>
+        
         <div class="cta-container">
-            <a href="#demo" class="btn btn-primary">
-                🦷 Try Live Demo
-            </a>
-            <a href="#pricing" class="btn btn-secondary">
+            <a href="#pricing" class="btn btn-primary">
                 💰 See Pricing
+            </a>
+            <a href="https://wa.me/256705885118" class="btn btn-secondary">
+                📱 Get It On WhatsApp
             </a>
         </div>
     </section>
     
     <section class="section">
         <div class="container">
-            <h2 class="section-title">What You Get (100% Working Now)</h2>
+            <h2 class="section-title">What You Just Experienced (100% Working Now)</h2>
+            
+            <div style="background: #fef3c7; border: 3px solid #fbbf24; border-radius: 20px; padding: 40px; margin: 40px 0; text-align: center;">
+                <p style="font-size: 24px; color: #92400e; font-weight: 700; line-height: 1.6;">
+                    That chatbot you just tested? <br>
+                    <span style="font-size: 32px; color: #d97706;">That's EXACTLY what goes on your website.</span><br>
+                    <span style="font-size: 20px;">Same speed. Same responses. Same everything.</span>
+                </p>
+            </div>
             
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">💬</div>
                     <h3 class="feature-title">24/7 Emergency Response</h3>
                     <p class="feature-desc">
-                        Patient breaks tooth at 8pm Saturday? AI answers in 3 seconds via website chat. 
-                        Captures their name, phone, emergency details. You call back Monday morning.
+                        Patient breaks tooth at 8pm Saturday? AI answers in 3 seconds. 
+                        Captures name, phone, emergency details. You call back Monday morning.
                     </p>
                 </div>
                 
@@ -491,8 +472,8 @@
                     <div class="feature-icon">📱</div>
                     <h3 class="feature-title">WhatsApp Integration</h3>
                     <p class="feature-desc">
-                        Patients can text your practice WhatsApp. "Broke my crown, need help!" AI responds 
-                        instantly, collects info. Built into Chatbase - no extra setup.
+                        Patients text your practice WhatsApp. "Broke my crown, need help!" 
+                        AI responds instantly. Built-in lead capture.
                     </p>
                 </div>
                 
@@ -500,17 +481,17 @@
                     <div class="feature-icon">🌎</div>
                     <h3 class="feature-title">Spanish Language (Auto-Detect)</h3>
                     <p class="feature-desc">
-                        Patient writes in Spanish? AI automatically responds in Spanish. Handles 95+ languages. 
-                        No extra configuration needed.
+                        Patient writes in Spanish? AI responds in Spanish automatically. 
+                        Handles 95+ languages. Zero extra setup.
                     </p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">📋</div>
-                    <h3 class="feature-title">Lead Capture & Notifications</h3>
+                    <h3 class="feature-title">Instant Lead Capture</h3>
                     <p class="feature-desc">
-                        Every emergency captured: name, phone, pain description, urgency level. You get 
-                        instant email notification with all details.
+                        Every emergency = name, phone, pain description saved. 
+                        You get email notification with all details.
                     </p>
                 </div>
                 
@@ -518,8 +499,8 @@
                     <div class="feature-icon">🦷</div>
                     <h3 class="feature-title">Dental FAQ Answering</h3>
                     <p class="feature-desc">
-                        "How much for cleaning?" "Do you take my insurance?" "What are your hours?" 
-                        AI answers using your practice information you provide.
+                        "How much for cleaning?" "Do you take my insurance?" 
+                        AI answers using YOUR practice information.
                     </p>
                 </div>
                 
@@ -527,32 +508,38 @@
                     <div class="feature-icon">🎨</div>
                     <h3 class="feature-title">Custom Branding</h3>
                     <p class="feature-desc">
-                        Your logo, your colors, your practice name. Looks like part of your website. 
-                        Professional and trustworthy.
+                        Your logo, your colors, your practice name. 
+                        Looks like part of your website.
                     </p>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="demo-section" id="demo">
-        <div class="demo-container">
-            <h2 class="demo-title">Try It Live Right Now</h2>
-            <p class="demo-subtitle">
-                Ask about dental emergencies, services, or pricing.<br>
-                See 3-second response time.
+    <section class="live-demo-section">
+        <div class="live-demo-container">
+            <h2 class="live-demo-title">Still Not Sure?</h2>
+            <p class="live-demo-subtitle">
+                Ask the chatbot more questions:<br>
+                "How do I install this?"<br>
+                "What if I get a Spanish-speaking patient?"<br>
+                "How much does this cost?"
             </p>
             
+            <div class="chatbot-highlight">
+                👇 The chatbot is LIVE on this page. Try it again.
+            </div>
+            
             <p style="font-size: 20px; color: white; margin: 40px 0; font-weight: 700;">
-                👇 Click chat bubble in bottom-right corner
+                Or skip the questions and just get started:
             </p>
             
             <div class="cta-container">
-                <a href="https://wa.me/256705885118?text=Hi!%20I%20want%20the%20dental%20emergency%20AI" class="btn btn-primary" target="_blank">
-                    📱 Get It On WhatsApp
+                <a href="https://wa.me/256705885118?text=I%20tried%20the%20chatbot.%20I%20want%20this%20for%20my%20practice." class="btn btn-primary" target="_blank">
+                    📱 WhatsApp: I Want This
                 </a>
-                <a href="mailto:nsubugacollin@gmail.com" class="btn btn-secondary">
-                    📧 Email for Demo
+                <a href="#pricing" class="btn btn-secondary">
+                    💰 Show Me Pricing
                 </a>
             </div>
         </div>
@@ -573,18 +560,17 @@
                         <p style="color: #6b7280; margin-bottom: 20px;">$500 one-time setup</p>
                         
                         <ul class="plan-features">
-                            <li>Website chat widget (24/7)</li>
+                            <li>24/7 website chat</li>
                             <li>Emergency lead capture</li>
                             <li>Email notifications</li>
                             <li>Spanish auto-detect</li>
-                            <li>Dental FAQ answering</li>
                             <li>Custom branding</li>
-                            <li class="disabled">WhatsApp integration</li>
-                            <li class="disabled">Auto-booking (future)</li>
-                            <li class="disabled">SMS reminders (future)</li>
+                            <li>3-day setup</li>
                         </ul>
                         
-                        <a href="#contact" class="buy-button">Start with Starter</a>
+                        <a href="https://wa.me/256705885118?text=I%20want%20the%20Starter%20package" class="buy-button">
+                            Get Started
+                        </a>
                     </div>
                 </div>
                 
@@ -600,13 +586,12 @@
                             <li>Facebook Messenger</li>
                             <li>Priority setup (3 days)</li>
                             <li>Monthly optimization</li>
-                            <li>Conversation history export</li>
-                            <li class="disabled">Auto-booking (coming soon)</li>
-                            <li class="disabled">SMS reminders (coming soon)</li>
-                            <li class="disabled">Dentrix sync (future upgrade)</li>
+                            <li>Conversation history</li>
                         </ul>
                         
-                        <a href="#contact" class="buy-button">Choose Professional</a>
+                        <a href="https://wa.me/256705885118?text=I%20want%20the%20Professional%20package" class="buy-button">
+                            Choose Professional
+                        </a>
                     </div>
                 </div>
                 
@@ -617,17 +602,17 @@
                         <p style="color: #6b7280; margin-bottom: 20px;">Let's talk</p>
                         
                         <ul class="plan-features">
-                            <li><strong>For multi-location practices</strong></li>
+                            <li><strong>For multi-location</strong></li>
                             <li>Everything in Professional</li>
-                            <li>Custom integrations (we build it)</li>
-                            <li>Dentrix/Eaglesoft sync (custom)</li>
-                            <li>SMS reminders via Twilio</li>
-                            <li>Email automations</li>
+                            <li>Custom integrations</li>
+                            <li>Dentrix/Eaglesoft sync</li>
+                            <li>SMS reminders</li>
                             <li>Dedicated support</li>
-                            <li>Monthly strategy calls</li>
                         </ul>
                         
-                        <a href="https://wa.me/256705885118" class="buy-button" target="_blank">Contact for Quote</a>
+                        <a href="https://wa.me/256705885118" class="buy-button" target="_blank">
+                            Contact for Quote
+                        </a>
                     </div>
                 </div>
             </div>
@@ -638,53 +623,6 @@
                     If you don't capture at least <strong>5 emergency leads</strong> in the first 30 days, 
                     I'll refund your setup fee in full. No questions asked.
                 </p>
-            </div>
-        </div>
-    </section>
-    
-    <section class="lead-section" id="contact">
-        <div class="lead-container">
-            <h2>🚀 Ready to Stop Losing Emergencies?</h2>
-            <p style="font-size: 20px; color: rgba(255,255,255,0.95); margin-bottom: 40px;">
-                Setup takes 3-5 days. You'll be capturing leads this week.
-            </p>
-            
-            <div class="lead-form">
-                <form action="https://formspree.io/f/xanpgnwr" method="POST">
-                    <div class="form-group">
-                        <label>Your Name *</label>
-                        <input type="text" name="name" required placeholder="Dr. John Smith">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Practice Name *</label>
-                        <input type="text" name="practice" required placeholder="Bright Smile Dental">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Email *</label>
-                        <input type="email" name="email" required placeholder="drsmith@example.com">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Phone (WhatsApp) *</label>
-                        <input type="tel" name="phone" required placeholder="+1 (555) 123-4567">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Which Package?</label>
-                        <select name="package">
-                            <option value="starter">Starter - $500 + $100/mo</option>
-                            <option value="professional">Professional - $800 + $200/mo</option>
-                            <option value="enterprise">Enterprise - Custom quote</option>
-                            <option value="not-sure">Not sure - Show me options</option>
-                        </select>
-                    </div>
-                    
-                    <button type="submit" class="form-submit">
-                        Get Started Today
-                    </button>
-                </form>
             </div>
         </div>
     </section>
@@ -707,7 +645,7 @@
         </p>
     </footer>
     
-    <!-- Chatbase -->
+    <!-- Chatbase with Lead Capture -->
     <script>
     (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="e2723_IYRTaOWIy8y2GBS";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
     </script>
